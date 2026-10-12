@@ -15,8 +15,8 @@ export const SocialShareModal: React.FC<SocialShareModalProps> = ({ currentLang,
   const siteUrl = window.location.href;
   const shareMessage =
     currentLang === 'te'
-      ? `|| శ్రీరస్తు శుభమస్తు || దీపిక & పృథ్వీరాజ్ ల వివాహ మహోత్సవ ఆహ్వాన పత్రిక. 💍 వివాహం: అక్టోబర్ 30, 2026 (ఉదయం 5:30) - విజయదుర్గ కళ్యాణ మండపం, చిత్తూరు. ✨ రిసెప్షన్: నవంబర్ 4, 2026 (సాయంత్రం) - మున్నూరు కాపు కళ్యాణ మండపం, నిజామాబాద్. ఆహ్వానాన్ని చూడండి: ${siteUrl}`
-      : `|| Sri Rastuva Subhamastu || Wedding Invitation of Deepika & Pruthviraj. 💍 Wedding: Oct 30, 2026 (5:30 AM) at Vijayadurga Kalyana Mandapam, Chittoor. ✨ Reception: Nov 4, 2026 (Evening) at Munnuru Kapu Kalyana Mandapam, Nizamabad. View full invitation: ${siteUrl}`;
+      ? `|| శ్రీరస్తు శుభమస్తు || దీపిక & పృథ్వీరాజ్ ల వివాహ మహోత్సవ ఆహ్వాన పత్రిక. ✨ వేడుక రిసెప్షన్: అక్టోబర్ 29, 2026 (సాయంత్రం 6:30) & 💍 శుభ ముహూర్తం: అక్టోబర్ 30, 2026 (ఉదయం 5:30) - విజయదుర్గ కళ్యాణ మండపం, చిత్తూరు. ఆహ్వానాన్ని చూడండి: ${siteUrl}`
+      : `|| Sri Rastuva Subhamastu || Wedding Invitation of Deepika & Pruthviraj. ✨ Reception: Oct 29, 2026 (6:30 PM) & 💍 Wedding: Oct 30, 2026 (5:30 AM) at Vijayadurga Kalyana Mandapam, Chittoor. View full invitation: ${siteUrl}`;
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(siteUrl);

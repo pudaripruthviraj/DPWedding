@@ -178,10 +178,10 @@ export const ScratchCardDate: React.FC<ScratchCardDateProps> = ({ currentLang })
       </div>
 
       {/* Royal Box Container - Synced with Ivory & Wine Palette */}
-      <div className="relative w-full h-42 rounded-2xl overflow-hidden border-2 border-[#C89B3C] shadow-md select-none touch-none bg-gradient-to-br from-[#FFFBF7] via-[#FFFDF9] to-[#FDF4E7]">
+      <div className="relative w-full h-44 rounded-2xl overflow-hidden border-2 border-[#C89B3C] shadow-md select-none touch-none bg-gradient-to-br from-[#FFFBF7] via-[#FFFDF9] to-[#FDF4E7]">
         
         {/* UNDERNEATH LAYER: The Revealed Royal Date Details */}
-        <div className="absolute inset-0 p-3.5 flex flex-col justify-between text-center relative z-0">
+        <div className="absolute inset-0 p-3 flex flex-col justify-between text-center z-0">
           
           {/* Header with Lord Ganesh */}
           <div className="space-y-0.5">
@@ -196,7 +196,7 @@ export const ScratchCardDate: React.FC<ScratchCardDateProps> = ({ currentLang })
             
             {/* Wedding Muhurtham Details */}
             <div className="pt-0.5">
-              <h3 className="text-sm sm:text-base font-display font-bold text-[#54121E]">
+              <h3 className="text-sm font-display font-bold text-[#54121E]">
                 {currentLang === 'te' ? '💍 వివాహం: శుక్రవారం, అక్టోబర్ 30, 2026' : '💍 Wedding: Friday, October 30, 2026'}
               </h3>
               <p className="text-xs font-bold text-[#781B10]">
@@ -212,22 +212,23 @@ export const ScratchCardDate: React.FC<ScratchCardDateProps> = ({ currentLang })
             </div>
           </div>
 
-          {/* Receptions Footer */}
-          <div className="pt-0.5">
-              <h3 className="text-sm sm:text-base font-display font-bold text-[#54121E]">
-                {currentLang === 'te' ? '💍 : శుక్రవారం, అక్టోబర్ 30, 2026' : '💍 Reception: Thursday, October 29, 2026'}
-              </h3>
-              <p className="text-xs font-bold text-[#781B10]">
-                {currentLang === 'te' 
-                  ? 'శుభ ముహూర్తం: ఉదయం 5:30 గంటలకు' 
-                  : 'Subha Muhurtham: 6:30 PM'}
-              </p>
-              <p className="text-[10px] font-serif text-amber-950/85">
-                {currentLang === 'te' 
-                  ? 'విజయదుర్గ కళ్యాణ మండపం, వెల్లూరు రోడ్డు, చిత్తూరు' 
-                  : 'Vijayadurga Kalyana Mandapam, Vellore Road, Chittoor'}
-              </p>
-            </div>
+          {/* Reception Details */}
+          <div className="pt-1 border-t border-[#C89B3C]/40 text-center space-y-0.5">
+            <h4 className="text-xs font-display font-bold text-[#54121E]">
+              {currentLang === 'te' 
+                ? '✨ వేడుక రిసెప్షన్: గురువారం, అక్టోబర్ 29, 2026' 
+                : '✨ Reception: Thursday, October 29, 2026'}
+            </h4>
+            <p className="text-[11px] font-bold text-[#781B10]">
+              {currentLang === 'te' 
+                ? 'సాయంత్రం 6:30 గంటల నుండి' 
+                : 'Evening from 6:30 PM'}
+            </p>
+            <p className="text-[9.5px] font-serif text-amber-950/85">
+              {currentLang === 'te' 
+                ? 'విజయదుర్గ కళ్యాణ మండపం, వెల్లూరు రోడ్డు, చిత్తూరు' 
+                : 'Vijayadurga Kalyana Mandapam, Vellore Road, Chittoor'}
+            </p>
           </div>
         </div>
 
@@ -236,7 +237,7 @@ export const ScratchCardDate: React.FC<ScratchCardDateProps> = ({ currentLang })
           <canvas
             ref={canvasRef}
             width={380}
-            height={168}
+            height={176}
             className="absolute inset-0 w-full h-full cursor-pointer touch-none z-10 transition-opacity duration-500"
             onMouseDown={(e) => { setIsScratching(true); scratch(e.clientX, e.clientY); }}
             onMouseMove={(e) => { if (isScratching) scratch(e.clientX, e.clientY); }}

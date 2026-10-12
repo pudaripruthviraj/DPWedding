@@ -48,8 +48,8 @@ export const Countdown: React.FC<CountdownProps> = ({ currentLang }) => {
     );
     const details = encodeURIComponent(
       currentLang === 'te'
-        ? 'శుభ ముహూర్తం: ఉదయం 5:30 గంటలకు, విజయదుర్గ కళ్యాణ మండపం, చిత్తూరు. ఘన వివాహ రిసెప్షన్: నవంబర్ 4 సాయంత్రం, మున్నూరు కాపు మండపం, నిజామాబాద్.'
-        : 'Subha Muhurtham: 5:30 AM at Vijayadurga Kalyana Mandapam, Near Durgamma Temple, Vellore Road, Greamspet, Chittoor. Grand Reception on Nov 4 at Munnuru Kapu Kalyana Mandapam, Shivaji Nagar, Nizamabad.'
+        ? 'వేడుక రిసెప్షన్: అక్టోబర్ 29 సాయంత్రం 6:30 గంటలకు, శుభ ముహూర్తం: అక్టోబర్ 30 ఉదయం 5:30 గంటలకు. వేదిక: విజయదుర్గ కళ్యాణ మండపం, చిత్తూరు.'
+        : 'Grand Celebration Reception: Oct 29 at 6:30 PM. Subha Muhurtham: Oct 30 at 5:30 AM at Vijayadurga Kalyana Mandapam, Near Durgamma Temple, Vellore Road, Greamspet, Chittoor.'
     );
     const location = encodeURIComponent('Vijayadurga Kalyana Mandapam, Near Durgamma Temple, Vellore Road, Greamspet, Chittoor');
     const startIso = '20261030T000000Z';
@@ -73,7 +73,7 @@ export const Countdown: React.FC<CountdownProps> = ({ currentLang }) => {
       'DTSTART:20261030T000000Z',
       'DTEND:20261030T060000Z',
       `SUMMARY:${summaryText}`,
-      'DESCRIPTION:Subha Muhurtham: 5:30 AM at Vijayadurga Kalyana Mandapam, Chittoor. Grand Reception: Nov 4 at Munnuru Kapu Kalyana Mandapam, Nizamabad.',
+      'DESCRIPTION:Grand Celebration Reception: Oct 29 (6:30 PM). Subha Muhurtham: Oct 30 (5:30 AM) at Vijayadurga Kalyana Mandapam, Chittoor.',
       'LOCATION:Vijayadurga Kalyana Mandapam, Near Durgamma Temple, Vellore Road, Greamspet, Chittoor',
       'STATUS:CONFIRMED',
       'END:VEVENT',

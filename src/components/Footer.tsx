@@ -32,7 +32,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang }) => {
             {t.appTitle}
           </h3>
           <p className="text-xs sm:text-sm text-amber-300/80">
-            Wedding: Friday, Oct 30, 2026 (Chittoor) · Reception: Wednesday, Nov 4, 2026 (Nizamabad)
+            Reception: Thursday, Oct 29, 2026 (Chittoor) · Wedding: Friday, Oct 30, 2026 (Chittoor)
           </p>
         </div>
 

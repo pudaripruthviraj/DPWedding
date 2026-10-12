@@ -75,8 +75,8 @@ export default function App() {
 
   const CHAPTERS = [
     { id: 1, titleTe: 'శుభ ఆహ్వానం', titleEn: 'Invitation', subTe: 'ముహూర్తం & రిసెప్షన్లు', subEn: 'Muhurtham & Receptions' },
-    { id: 2, titleTe: 'వేడుకల వివరాలు', titleEn: 'Ceremonies', subTe: 'పందిరి, హల్దీ, వివాహం & రిసెప్షన్లు', subEn: 'Pandiri, Haldi, Wedding & Receptions' },
-    { id: 3, titleTe: 'వేదిక & RSVP', titleEn: 'Venues & RSVP', subTe: 'చిత్తూరు & నిజామాబాద్ వేదికలు', subEn: 'Chittoor & Nizamabad Venues' },
+    { id: 2, titleTe: 'వేడుకల వివరాలు', titleEn: 'Ceremonies', subTe: 'పందిరి, హల్దీ, వివాహం & రిసెప్షన్', subEn: 'Pandiri, Haldi, Wedding & Reception' },
+    { id: 3, titleTe: 'వేదిక & RSVP', titleEn: 'Venue & RSVP', subTe: 'చిత్తూరు వేదిక', subEn: 'Chittoor Venue' },
     { id: 4, titleTe: 'ఆశీస్సులు', titleEn: 'Blessings', subTe: 'చిత్రమాలిక & శుభాకాంక్షలు', subEn: 'Gallery & Guestbook' },
   ];
 
@@ -249,13 +249,13 @@ export default function App() {
     triggerAkshinthaluShower();
   };
 
-  const shareText = `Wedding Invitation: Deepika & Pruthviraj | ✨ Grand Celebration Reception on Thursday, Oct 29, 2026 (6:30 PM) at Vijayadurga Kalyana Mandapam, Chittoor | 💍 Subha Muhurtham on Friday, Oct 30, 2026 (5:30 AM) at Vijayadurga Kalyana Mandapam, Chittoor | ✨ Grand Wedding Reception on Wednesday, Nov 4, 2026 (6:30 PM) at Munnuru Kapu Kalyana Mandapam, Nizamabad. View full invitation: ${window.location.href}`;
+  const shareText = `Wedding Invitation: Deepika & Pruthviraj | ✨ Grand Celebration Reception on Thursday, Oct 29, 2026 (6:30 PM) at Vijayadurga Kalyana Mandapam, Chittoor | 💍 Subha Muhurtham on Friday, Oct 30, 2026 (5:30 AM) at Vijayadurga Kalyana Mandapam, Chittoor. View full invitation: ${window.location.href}`;
 
   const handleCalendar = () => {
-    const title = encodeURIComponent('Deepika & Pruthviraj Wedding & Receptions (Oct 29, Oct 30 & Nov 4)');
-    const details = encodeURIComponent('Celebrations Schedule:\n1. Grand Celebration Reception: Thursday, Oct 29, 2026 (6:30 PM) at Vijayadurga Kalyana Mandapam, Near Durgamma Temple, Vellore Road, Greamspet, Chittoor.\n2. Subha Muhurtham: Friday, Oct 30, 2026 (5:30 AM) at Vijayadurga Kalyana Mandapam, Chittoor.\n3. Grand Wedding Reception: Wednesday, Nov 4, 2026 (6:30 PM) at Munnuru Kapu Kalyana Mandapam, Shivaji Nagar, Nizamabad.');
+    const title = encodeURIComponent('Deepika & Pruthviraj Wedding & Reception (Oct 29 & Oct 30, 2026)');
+    const details = encodeURIComponent('Celebrations Schedule:\n1. Grand Celebration Reception: Thursday, Oct 29, 2026 (6:30 PM) at Vijayadurga Kalyana Mandapam, Near Durgamma Temple, Vellore Road, Greamspet, Chittoor.\n2. Subha Muhurtham: Friday, Oct 30, 2026 (5:30 AM) at Vijayadurga Kalyana Mandapam, Chittoor.');
     const location = encodeURIComponent('Vijayadurga Kalyana Mandapam, Near Durgamma Temple, Vellore Road, Greamspet, Chittoor, Andhra Pradesh 517002');
-    window.open(`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=20261029T130000Z/20261104T180000Z&details=${details}&location=${location}`, '_blank');
+    window.open(`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=20261029T130000Z/20261030T100000Z&details=${details}&location=${location}`, '_blank');
   };
 
   const scrollToId = (id: string) => {
@@ -710,19 +710,19 @@ export default function App() {
           {/* Top Auspicious Lord Ganesh Emblem */}
           <LordGaneshHeader 
             currentLang={currentLang} 
-            subtitle={currentLang === 'te' ? 'చిత్తూరు & నిజామాబాద్ వేదికలు' : 'Chittoor & Nizamabad Venues'} 
+            subtitle={currentLang === 'te' ? 'చిత్తూరు వేదిక' : 'Chittoor Venue'} 
           />
           <div className="space-y-1">
             <span className="text-xs font-bold text-[#4A0E17] uppercase tracking-widest font-serif">
-              {currentLang === 'te' ? 'కళ్యాణ వేదికలు & మార్గదర్శిని' : 'CELEBRATION VENUES & LOCATIONS'}
+              {currentLang === 'te' ? 'కళ్యాణ వేదిక & మార్గదర్శిని' : 'CELEBRATION VENUE & LOCATION'}
             </span>
             <h2 className="text-xl font-display font-bold text-[#4A0E17]">
-              {currentLang === 'te' ? 'కళ్యాణ & రిసెప్షన్ వేదికలు' : 'Celebration Venues'}
+              {currentLang === 'te' ? 'కళ్యాణ & రిసెప్షన్ వేదిక' : 'Celebration Venue'}
             </h2>
             <p className="text-xs text-amber-950/80">
               {currentLang === 'te' 
-                ? 'అక్టోబర్ 29 రిసెప్షన్ & అక్టోబర్ 30 వివాహం (చిత్తూరు), నవంబర్ 4 రిసెప్షన్ (నిజామాబాద్)' 
-                : 'Oct 29 Reception & Oct 30 Wedding (Chittoor) · Nov 4 Reception (Nizamabad)'}
+                ? 'అక్టోబర్ 29 రిసెప్షన్ & అక్టోబర్ 30 వివాహం (చిత్తూరు)' 
+                : 'Oct 29 Reception & Oct 30 Wedding (Chittoor)'}
             </p>
           </div>
 
@@ -763,48 +763,6 @@ export default function App() {
               <button
                 onClick={() => {
                   navigator.clipboard.writeText('Vijayadurga Kalyana Mandapam, Near Durgamma Temple, Vellore Road, Greamspet, Chittoor, Andhra Pradesh 517002');
-                  triggerAkshinthaluShower();
-                }}
-                className="py-2 px-3 bg-amber-100/80 hover:bg-amber-200/80 text-amber-950 text-xs font-semibold rounded-xl transition-colors cursor-pointer"
-              >
-                {currentLang === 'te' ? 'చిరునామా కాపీ' : 'Copy'}
-              </button>
-            </div>
-          </div>
-
-          {/* Venue 2: Nizamabad Reception Mandapam */}
-          <div className="p-4 rounded-2xl bg-white border-2 border-amber-300 shadow-md text-left space-y-3">
-            <div className="flex items-center gap-2">
-              <span className="px-2.5 py-0.5 rounded-full bg-amber-100 text-[#781B10] text-[10px] font-bold uppercase">
-                {currentLang === 'te' ? '✨ నిజామాబాద్ రిసెప్షన్' : '✨ Nizamabad Reception'}
-              </span>
-              <span className="text-[11px] font-bold text-[#781B10]">
-                {currentLang === 'te' ? 'నవంబర్ 4, 2026 · సాయంత్రం 6:30' : 'Nov 4, 2026 · Evening'}
-              </span>
-            </div>
-
-            <div>
-              <h3 className="font-display font-bold text-base text-[#781B10]">
-                Munnuru Kapu Kalyana Mandapam
-              </h3>
-              <p className="text-xs text-amber-950/85 mt-0.5">
-                Shivaji Nagar, Nizamabad, Telangana 503001
-              </p>
-            </div>
-
-            <div className="pt-1 flex items-center gap-2">
-              <button
-                onClick={() => {
-                  window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent('Munnuru Kapu Kalyana Mandapam Shivaji Nagar Nizamabad Telangana')}`, '_blank');
-                }}
-                className="flex-1 py-2 px-3 bg-[#781B10] text-white text-xs font-bold rounded-xl shadow-xs hover:bg-[#991B1B] transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
-              >
-                <Navigation className="w-3.5 h-3.5" />
-                <span>{currentLang === 'te' ? 'గూగుల్ మ్యాప్స్' : 'Google Maps'}</span>
-              </button>
-              <button
-                onClick={() => {
-                  navigator.clipboard.writeText('Munnuru Kapu Kalyana Mandapam, Shivaji Nagar, Nizamabad, Telangana 503001');
                   triggerAkshinthaluShower();
                 }}
                 className="py-2 px-3 bg-amber-100/80 hover:bg-amber-200/80 text-amber-950 text-xs font-semibold rounded-xl transition-colors cursor-pointer"

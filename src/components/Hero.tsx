@@ -99,8 +99,8 @@ export const Hero: React.FC<HeroProps> = ({ currentLang, onOpenRsvp }) => {
               </p>
               <p className="text-xs sm:text-sm font-medium drop-shadow-sm">
                 {currentLang === 'te' 
-                  ? 'విజయదుర్గ కళ్యాణ మండపం (చిత్తూరు) · మున్నూరు కాపు మండపం (నిజామాబాద్)' 
-                  : 'Vijayadurga Mandapam (Chittoor) · Munnuru Kapu Mandapam (Nizamabad)'}
+                  ? 'విజయదుర్గ కళ్యాణ మండపం, వెల్లూరు రోడ్డు, చిత్తూరు' 
+                  : 'Vijayadurga Kalyana Mandapam, Vellore Road, Chittoor'}
               </p>
             </div>
           </div>

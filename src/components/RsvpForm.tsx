@@ -74,7 +74,7 @@ export const RsvpForm: React.FC<RsvpFormProps> = ({ currentLang, onAddRsvp }) =>
 
   const handleCopyPass = () => {
     if (!confirmedRsvp) return;
-    const text = `Kalyana Mahotsavam Wedding Pass\nGuest: ${confirmedRsvp.fullName}\nPass ID: ${confirmedRsvp.id}\nAttendees: ${confirmedRsvp.guestCount}\nWedding: Oct 30, 2026 (5:30 AM) - Vijayadurga Kalyana Mandapam, Chittoor\nReception: Nov 4, 2026 (Evening) - Munnuru Kapu Kalyana Mandapam, Nizamabad`;
+    const text = `Kalyana Mahotsavam Wedding Pass\nGuest: ${confirmedRsvp.fullName}\nPass ID: ${confirmedRsvp.id}\nAttendees: ${confirmedRsvp.guestCount}\nReception: Oct 29, 2026 (6:30 PM) - Vijayadurga Kalyana Mandapam, Chittoor\nWedding: Oct 30, 2026 (5:30 AM) - Vijayadurga Kalyana Mandapam, Chittoor`;
     navigator.clipboard.writeText(text);
     setCopiedPass(true);
     setTimeout(() => setCopiedPass(false), 2500);
@@ -136,7 +136,7 @@ export const RsvpForm: React.FC<RsvpFormProps> = ({ currentLang, onAddRsvp }) =>
                 </div>
                 <div>
                   <span className="text-amber-800 block">Auspicious Dates:</span>
-                  <span className="font-bold">Oct 29-30 (Chittoor) · Nov 4 (Nizamabad)</span>
+                  <span className="font-bold">Oct 29 Reception & Oct 30 Wedding (Chittoor)</span>
                 </div>
                 <div>
                   <span className="text-amber-800 block">Primary Venue:</span>
@@ -328,7 +328,7 @@ export const RsvpForm: React.FC<RsvpFormProps> = ({ currentLang, onAddRsvp }) =>
                 />
                 <div>
                   <span className="font-semibold block">{t.accommodationLabel}</span>
-                  <span className="text-[11px] text-amber-800">We have reserved guest accommodations in Chittoor & Nizamabad.</span>
+                  <span className="text-[11px] text-amber-800">We have reserved guest accommodations in Chittoor.</span>
                 </div>
               </label>
 
@@ -441,8 +441,8 @@ export const RsvpForm: React.FC<RsvpFormProps> = ({ currentLang, onAddRsvp }) =>
                   </div>
                 </div>
                 <p className="text-xs font-sans text-amber-900 leading-relaxed">
-                  <strong>💍 Wedding:</strong> Vijayadurga Kalyana Mandapam, Near Durgamma Temple, Vellore Road, Greamspet, Chittoor (Friday, Oct 30, 2026 at 5:30 AM)<br />
-                  <strong>✨ Grand Reception:</strong> Munnuru Kapu Kalyana Mandapam, Shivaji Nagar, Nizamabad (Wednesday, Nov 4, 2026, Evening)
+                  <strong>✨ Grand Reception:</strong> Vijayadurga Kalyana Mandapam, Near Durgamma Temple, Vellore Road, Greamspet, Chittoor (Thursday, Oct 29, 2026 at 6:30 PM)<br />
+                  <strong>💍 Subha Muhurtham:</strong> Vijayadurga Kalyana Mandapam, Chittoor (Friday, Oct 30, 2026 at 5:30 AM)
                 </p>
                 <p className="text-xs font-sans text-amber-900">
                   Looking forward to welcoming you with traditional poornakumbham and fragrant talambralu.

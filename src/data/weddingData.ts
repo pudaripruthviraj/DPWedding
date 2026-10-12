@@ -318,7 +318,7 @@ export const INITIAL_BUDGET: BudgetItem[] = [
     estimatedCost: 220000,
     actualCost: 215000,
     paid: false,
-    vendorNotes: 'Guest Suites & Hospitality, Chittoor & Nizamabad.',
+    vendorNotes: 'Guest Suites & Hospitality, Chittoor.',
   },
 ];
 

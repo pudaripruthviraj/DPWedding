@@ -10,7 +10,7 @@ interface InteractiveMapProps {
 export const InteractiveMap: React.FC<InteractiveMapProps> = ({ currentLang }) => {
   const t = translations[currentLang];
   const isTelugu = currentLang === 'te';
-  const [activeVenueTab, setActiveVenueTab] = useState<'chittoorReception' | 'wedding' | 'reception'>('chittoorReception');
+  const [activeVenueTab, setActiveVenueTab] = useState<'chittoorReception' | 'wedding'>('chittoorReception');
   const [copiedAddress, setCopiedAddress] = useState(false);
 
   const venues = {
@@ -66,33 +66,6 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({ currentLang }) =
         { icon: Train, text: 'కాట్పాడి జంక్షన్ (KPD): దాదాపు 35 నిమిషాలు (30 కి.మీ)' },
         { icon: Plane, text: 'తిరుపతి విమానాశ్రయం / బెంగళూరు కనెక్టివిటీ' },
         { icon: Car, text: 'విశాలమైన అతిథుల వాహన మరియు బస్సుల పార్కింగ్ సదుపాయం' },
-      ],
-    },
-    reception: {
-      key: 'reception',
-      nameEn: 'Munnuru Kapu Kalyana Mandapam',
-      nameTe: 'మున్నూరు కాపు కళ్యాణ మండపం',
-      tagEn: '✨ Grand Wedding Reception & Vindu',
-      tagTe: '✨ ఘన వివాహ రిసెప్షన్ & విందు భోజనం',
-      dateEn: 'Wednesday, November 4, 2026',
-      dateTe: 'బుధవారం, నవంబర్ 4, 2026',
-      timeEn: 'Evening 06:30 PM onwards',
-      timeTe: 'సాయంత్రం 06:30 గంటల నుండి',
-      addressEn: 'Shivaji Nagar, Nizamabad, Telangana 503001',
-      addressTe: 'శివాజీ నగర్, నిజామాబాద్, తెలంగాణ 503001',
-      coords: '18.6725,78.0941',
-      mapsQuery: 'Munnuru Kapu Kalyana Mandapam Shivaji Nagar Nizamabad Telangana',
-      transitInfoEn: [
-        { icon: Train, text: 'Nizamabad Junction Railway Station (NZB): ~8 mins (3 km)' },
-        { icon: Car, text: 'Nizamabad Central Bus Station (TSRTC): ~6 mins (2 km)' },
-        { icon: Plane, text: 'Hyderabad RGIA Airport / NH-44 Express Corridor' },
-        { icon: Car, text: 'Dedicated celebration banquet hall & banquet parking' },
-      ],
-      transitInfoTe: [
-        { icon: Train, text: 'నిజామాబాద్ జంక్షన్ రైల్వే స్టేషన్ (NZB): ~8 నిమిషాలు (3 కి.మీ)' },
-        { icon: Car, text: 'నిజామాబాద్ సెంట్రల్ బస్ స్టేషన్ (TSRTC): ~6 నిమిషాలు (2 కి.మీ)' },
-        { icon: Plane, text: 'హైదరాబాద్ RGIA ఎయిర్‌పోర్ట్ / NH-44 హైవే కనెక్టివిటీ' },
-        { icon: Car, text: 'కళ్యాణ మండపం ప్రత్యేక పార్కింగ్ సదుపాయం' },
       ],
     },
   };
@@ -172,21 +145,6 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({ currentLang }) =
               <div className="text-left">
                 <span className="block leading-tight text-[11px] sm:text-xs">{isTelugu ? 'ముహూర్తం (చిత్తూరు)' : 'Oct 30 Wedding'}</span>
                 <span className="text-[9px] opacity-80 block">{isTelugu ? 'అక్టోబర్ 30 · ఉదయం 5:30' : 'Chittoor · 5:30 AM'}</span>
-              </div>
-            </button>
-
-            <button
-              onClick={() => setActiveVenueTab('reception')}
-              className={`flex-1 py-2.5 px-2 sm:px-3 rounded-xl font-bold text-xs sm:text-sm transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
-                activeVenueTab === 'reception'
-                  ? 'bg-[#54121E] text-white shadow-md'
-                  : 'text-amber-900 hover:bg-amber-100/60'
-              }`}
-            >
-              <span>✨</span>
-              <div className="text-left">
-                <span className="block leading-tight text-[11px] sm:text-xs">{isTelugu ? 'రిసెప్షన్ (నిజామాబాద్)' : 'Nov 4 Reception'}</span>
-                <span className="text-[9px] opacity-80 block">{isTelugu ? 'నవంబర్ 4 · సాయంత్రం' : 'Nizamabad · 6:30 PM'}</span>
               </div>
             </button>
           </div>
@@ -302,101 +260,57 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({ currentLang }) =
                 {isTelugu ? 'ప్రత్యక్ష మ్యాప్ నావిగేషన్' : 'Live Navigation Map'}
               </span>
               <span className="px-2 py-0.5 bg-rose-100 text-[#54121E] font-bold rounded-full text-[11px]">
-                {activeVenueTab === 'wedding' ? 'Chittoor' : 'Nizamabad'}
+                Chittoor
               </span>
             </div>
 
             {/* Visual Route Blueprint SVG Card */}
             <div className="relative w-full h-80 sm:h-96 rounded-xl overflow-hidden border border-amber-200 bg-[#FAF7EE] flex items-center justify-center p-4">
               <svg className="w-full h-full" viewBox="0 0 600 400" preserveAspectRatio="xMidYMid meet">
-                {activeVenueTab === 'wedding' ? (
-                  // Chittoor Wedding Map SVG
-                  <>
-                    <path d="M 50,320 Q 280,240 550,120" stroke="#E2D9C5" strokeWidth="26" fill="none" />
-                    <path d="M 50,320 Q 280,240 550,120" stroke="#F59E0B" strokeWidth="3" strokeDasharray="8 6" fill="none" />
-                    <text x="180" y="270" fill="#B45309" fontSize="11" fontWeight="bold">
-                      Vellore Road / Greamspet Highway
-                    </text>
+                <path d="M 50,320 Q 280,240 550,120" stroke="#E2D9C5" strokeWidth="26" fill="none" />
+                <path d="M 50,320 Q 280,240 550,120" stroke="#F59E0B" strokeWidth="3" strokeDasharray="8 6" fill="none" />
+                <text x="180" y="270" fill="#B45309" fontSize="11" fontWeight="bold">
+                  Vellore Road / Greamspet Highway
+                </text>
 
-                    {/* Durgamma Temple Landmark */}
-                    <g transform="translate(190, 160)">
-                      <circle cx="0" cy="0" r="14" fill="#F59E0B" opacity="0.25" />
-                      <circle cx="0" cy="0" r="6" fill="#D97706" />
-                      <text x="14" y="4" fill="#92400E" fontSize="10" fontWeight="bold">
-                        Durgamma Temple Landmark
-                      </text>
-                    </g>
+                {/* Durgamma Temple Landmark */}
+                <g transform="translate(190, 160)">
+                  <circle cx="0" cy="0" r="14" fill="#F59E0B" opacity="0.25" />
+                  <circle cx="0" cy="0" r="6" fill="#D97706" />
+                  <text x="14" y="4" fill="#92400E" fontSize="10" fontWeight="bold">
+                    Durgamma Temple Landmark
+                  </text>
+                </g>
 
-                    {/* Chittoor Railway Station */}
-                    <g transform="translate(100, 310)">
-                      <circle cx="0" cy="0" r="14" fill="#3B82F6" opacity="0.2" />
-                      <circle cx="0" cy="0" r="6" fill="#1D4ED8" />
-                      <text x="12" y="4" fill="#1E3A8A" fontSize="10" fontWeight="bold">
-                        Chittoor Station (~5 mins)
-                      </text>
-                    </g>
+                {/* Chittoor Railway Station */}
+                <g transform="translate(100, 310)">
+                  <circle cx="0" cy="0" r="14" fill="#3B82F6" opacity="0.2" />
+                  <circle cx="0" cy="0" r="6" fill="#1D4ED8" />
+                  <text x="12" y="4" fill="#1E3A8A" fontSize="10" fontWeight="bold">
+                    Chittoor Station (~5 mins)
+                  </text>
+                </g>
 
-                    {/* Katpadi Junction Highway */}
-                    <g transform="translate(480, 110)">
-                      <circle cx="0" cy="0" r="14" fill="#6B7280" opacity="0.2" />
-                      <circle cx="0" cy="0" r="6" fill="#374151" />
-                      <text x="-140" y="4" fill="#374151" fontSize="10" fontWeight="bold">
-                        Towards Katpadi / Vellore
-                      </text>
-                    </g>
+                {/* Katpadi Junction Highway */}
+                <g transform="translate(480, 110)">
+                  <circle cx="0" cy="0" r="14" fill="#6B7280" opacity="0.2" />
+                  <circle cx="0" cy="0" r="6" fill="#374151" />
+                  <text x="-140" y="4" fill="#374151" fontSize="10" fontWeight="bold">
+                    Towards Katpadi / Vellore
+                  </text>
+                </g>
 
-                    {/* Vijayadurga Kalyana Mandapam Destination Marker */}
-                    <g transform="translate(320, 190)" className="animate-bounce">
-                      <circle cx="0" cy="0" r="26" fill="#DC2626" opacity="0.25" />
-                      <circle cx="0" cy="0" r="11" fill="#991B1B" />
-                      <circle cx="0" cy="0" r="4" fill="#FFFFFF" />
-                      <path d="M 0,-26 L 7,-10 L -7,-10 Z" fill="#991B1B" />
-                      <rect x="-105" y="-60" width="210" height="28" rx="8" fill="#54121E" />
-                      <text x="0" y="-42" fill="#FFF" fontSize="10" fontWeight="bold" textAnchor="middle">
-                        Vijayadurga Kalyana Mandapam
-                      </text>
-                    </g>
-                  </>
-                ) : (
-                  // Nizamabad Reception Map SVG
-                  <>
-                    <path d="M 60,80 L 540,320" stroke="#E2D9C5" strokeWidth="26" fill="none" />
-                    <path d="M 60,80 L 540,320" stroke="#F59E0B" strokeWidth="3" strokeDasharray="8 6" fill="none" />
-                    <text x="210" y="180" fill="#B45309" fontSize="11" fontWeight="bold">
-                      Shivaji Nagar Road / NH-44 Link
-                    </text>
-
-                    {/* Nizamabad Junction Station */}
-                    <g transform="translate(120, 110)">
-                      <circle cx="0" cy="0" r="14" fill="#3B82F6" opacity="0.2" />
-                      <circle cx="0" cy="0" r="6" fill="#1D4ED8" />
-                      <text x="12" y="4" fill="#1E3A8A" fontSize="10" fontWeight="bold">
-                        Nizamabad Junction (~8 mins)
-                      </text>
-                    </g>
-
-                    {/* TSRTC Bus Station */}
-                    <g transform="translate(460, 290)">
-                      <circle cx="0" cy="0" r="14" fill="#6B7280" opacity="0.2" />
-                      <circle cx="0" cy="0" r="6" fill="#374151" />
-                      <text x="-150" y="4" fill="#374151" fontSize="10" fontWeight="bold">
-                        Central Bus Station (~6 mins)
-                      </text>
-                    </g>
-
-                    {/* Munnuru Kapu Kalyana Mandapam Destination Marker */}
-                    <g transform="translate(310, 200)" className="animate-bounce">
-                      <circle cx="0" cy="0" r="26" fill="#DC2626" opacity="0.25" />
-                      <circle cx="0" cy="0" r="11" fill="#991B1B" />
-                      <circle cx="0" cy="0" r="4" fill="#FFFFFF" />
-                      <path d="M 0,-26 L 7,-10 L -7,-10 Z" fill="#991B1B" />
-                      <rect x="-115" y="-60" width="230" height="28" rx="8" fill="#54121E" />
-                      <text x="0" y="-42" fill="#FFF" fontSize="10" fontWeight="bold" textAnchor="middle">
-                        Munnuru Kapu Kalyana Mandapam
-                      </text>
-                    </g>
-                  </>
-                )}
+                {/* Vijayadurga Kalyana Mandapam Destination Marker */}
+                <g transform="translate(320, 190)" className="animate-bounce">
+                  <circle cx="0" cy="0" r="26" fill="#DC2626" opacity="0.25" />
+                  <circle cx="0" cy="0" r="11" fill="#991B1B" />
+                  <circle cx="0" cy="0" r="4" fill="#FFFFFF" />
+                  <path d="M 0,-26 L 7,-10 L -7,-10 Z" fill="#991B1B" />
+                  <rect x="-105" y="-60" width="210" height="28" rx="8" fill="#54121E" />
+                  <text x="0" y="-42" fill="#FFF" fontSize="10" fontWeight="bold" textAnchor="middle">
+                    Vijayadurga Kalyana Mandapam
+                  </text>
+                </g>
               </svg>
 
               {/* Floating Action Overlay */}
@@ -405,7 +319,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({ currentLang }) =
                   {isTelugu ? currentVenue.nameTe : currentVenue.nameEn}
                 </span>
                 <span className="font-mono text-amber-900 block text-[11px]">
-                  {currentVenue.coords} · {activeVenueTab === 'wedding' ? 'Chittoor' : 'Nizamabad'}
+                  {currentVenue.coords} · Chittoor
                 </span>
                 <button
                   onClick={handleGoogleMaps}
