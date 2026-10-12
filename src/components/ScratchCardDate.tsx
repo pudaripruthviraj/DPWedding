@@ -213,13 +213,21 @@ export const ScratchCardDate: React.FC<ScratchCardDateProps> = ({ currentLang })
           </div>
 
           {/* Receptions Footer */}
-          <div className="pt-1.5 border-t border-[#C89B3C]/40 text-[9.5px] text-amber-950 flex flex-col sm:flex-row items-center justify-between font-serif gap-0.5">
-            <span className="font-bold text-[#781B10]">
-              {currentLang === 'te' ? '✨ ఏప్రిల్ 29: హైదరాబాద్' : '✨ Apr 29: Hyderabad'}
-            </span>
-            <span className="font-bold text-[#54121E]">
-              {currentLang === 'te' ? '✨ నవంబర్ 4: నిజామాబాద్' : '✨ Nov 4: Nizamabad'}
-            </span>
+          <div className="pt-0.5">
+              <h3 className="text-sm sm:text-base font-display font-bold text-[#54121E]">
+                {currentLang === 'te' ? '💍 : శుక్రవారం, అక్టోబర్ 30, 2026' : '💍 Reception: Thursday, October 29, 2026'}
+              </h3>
+              <p className="text-xs font-bold text-[#781B10]">
+                {currentLang === 'te' 
+                  ? 'శుభ ముహూర్తం: ఉదయం 5:30 గంటలకు' 
+                  : 'Subha Muhurtham: 6:30 PM'}
+              </p>
+              <p className="text-[10px] font-serif text-amber-950/85">
+                {currentLang === 'te' 
+                  ? 'విజయదుర్గ కళ్యాణ మండపం, వెల్లూరు రోడ్డు, చిత్తూరు' 
+                  : 'Vijayadurga Kalyana Mandapam, Vellore Road, Chittoor'}
+              </p>
+            </div>
           </div>
         </div>
 

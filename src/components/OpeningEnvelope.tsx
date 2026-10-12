@@ -142,17 +142,7 @@ export const OpeningEnvelope: React.FC<OpeningEnvelopeProps> = ({ onOpen, curren
                   </p>
                 </div>
 
-                {/* Reception in Nizamabad */}
-                <div className="space-y-0.2 pt-0.5 border-t border-[#C89B3C]/20">
-                  <p className="text-[9.5px] sm:text-[10.5px] font-serif font-bold text-[#6B1D2F]">
-                    {isTelugu ? '✨ రిసెప్షన్: నవంబర్ 4, 2026 - సాయంత్రం' : '✨ Reception: 4 November 2026 · Evening'}
-                  </p>
-                  <p className="text-[8.5px] font-serif text-amber-950/85 leading-tight">
-                    {isTelugu 
-                      ? 'మున్నూరు కాపు కళ్యాణ మండపం, శివాజీ నగర్, నిజామాబాద్' 
-                      : 'Munnuru Kapu Kalyana Mandapam, Nizamabad'}
-                  </p>
-                </div>
+               
               </div>
             </div>
 
