@@ -1062,7 +1062,7 @@ export default function App() {
           <p className="font-serif italic text-[#4A0E17] font-bold text-sm">
             {currentLang === 'te' 
               ? 'ఆహ్వానించువారు: పండరి & ఎన్. కుటుంబ సభ్యులు మరియు బంధుమిత్రులు' 
-              : 'Cordially Invited by: Pandari & N. Families and Relatives'}
+              : 'Cordially Invited by: pudari & N. Families and Relatives'}
           </p>
           <p className="text-[10px] text-amber-800">
             October & November 2026

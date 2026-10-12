@@ -77,7 +77,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang }) => {
 
         {/* Family signatures */}
         <p className="text-[11px] text-amber-400/60">
-          With prayers & warmth from Pandari & Vangala Families · Hyderabad, Telangana
+          With prayers & warmth from pudari & Vangala Families · Hyderabad, Telangana
         </p>
       </div>
     </footer>

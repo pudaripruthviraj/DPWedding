@@ -143,7 +143,7 @@ export const INITIAL_RSVPS: GuestRsvp[] = [
   },
   {
     id: 'KV-2026-1002',
-    fullName: 'Dr. Sudhakar Pandari',
+    fullName: 'Dr. Sudhakar pudari',
     email: 'dr.sudhakar@example.com',
     phone: '+91 99890 55443',
     guestCount: 2,
@@ -325,7 +325,7 @@ export const INITIAL_BUDGET: BudgetItem[] = [
 export const INITIAL_TABLES: SeatingTable[] = [
   {
     id: 'table-1',
-    nameEn: 'Mandapam Front - Pandari & Vangala Elders',
+    nameEn: 'Mandapam Front - pudari & Vangala Elders',
     nameTe: 'మండపం ముందు వరుస - పెద్దలు',
     capacity: 8,
     zone: 'vip-mandapam',
