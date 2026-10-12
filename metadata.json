@@ -1,0 +1,8 @@
+{
+  "name": "Deepika & Pruthviraj Wedding & Receptions",
+  "description": "Wedding celebration invitation of Deepika & Pruthviraj. Grand Celebration Reception on April 29, 2026 (Hyderabad), Subha Muhurtham on October 30, 2026 (Chittoor), and Grand Wedding Reception on November 4, 2026 (Nizamabad).",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
